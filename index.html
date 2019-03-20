@@ -10,16 +10,32 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>		
+	</head>	
+	<body class="is-preload">		
+		<!-- Wrapper -->		
+		<!-- The overlay -->
+		<div id="myNav" class="overlay">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="divided">
-
+				<!-- Button to close the overlay navigation -->
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			
+				<!-- Overlay content -->
+				<div class="overlay-content">				
+				<a href="#">R & D</a>
+				<a href="#">Projects</a>
+				<a href="#">Contact</a>
+				</div>
+			
+			</div>									
+			<div id="wrapper" class="divided">						
+					<div id="overlaydiv" style="margin-left: 30px; margin-top: 30px;" >
+						<span class="icon style3 fa-bars" style="font-size:30px;cursor:pointer;" onclick="openNav()"></span>
+					</div>
 				<!-- One -->
-					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
-						<div class="content">
+					<!-- Use any element to open/show the overlay navigation menu -->					
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">						
+						<div class="content">							
 							<h1>BBR LAB</h1>
 							<p class="major"></a>BBR Lab is an integrated production team of Directors, Designers & Creative Technologists, focused on concept-to-delivery creative partnerships   </p>
 							<ul class="actions stacked">
@@ -36,7 +52,7 @@
 							<div class="items style1 medium onscroll-fade-in">
 								<section>
 									<span class="style2 major"></span>
-									<h3>Creative Development</h3>									
+									<h3>Creative Development</h3>
 								</section>
 								<section>
 									<span class="style2 major"></span>
@@ -73,6 +89,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/menu.js"></script>
 
 	</body>
 </html>

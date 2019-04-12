@@ -1,6 +1,6 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i");
-
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Serif+KR');
 /*
 	Story by HTML5 UP
 	html5up.net | @ajlkn
@@ -37,6 +37,10 @@ ol, ul {
 	list-style: none;
 }
 
+hr {	
+	background-color: #ffffff;
+}
+
 blockquote, q {
 	quotes: none;
 }
@@ -70,6 +74,27 @@ input, select, textarea {
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
+}
+
+.title {
+	font-family: 'Noto Serif KR', serif;
+	font-size : 1.5em;
+	font-weight: 100;
+}
+
+
+.youtubeContainer {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}    
+.youtubeVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Menu */
@@ -259,6 +284,7 @@ input, select, textarea {
 	}
 
 		p.major {
+			margin-top: 50px;
 			font-size: 0.80rem;
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		}
@@ -3717,10 +3743,14 @@ input, select, textarea {
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: inherit;
+			background-color: #000000;			
 			border-radius: 0.5rem;
 			margin-bottom: 2rem;
-			z-index: 1;
+			z-index: 1;			
+			opacity: 0.8;
+			color: #ffffff;			
+			font-size: 1rem;
+			font-family: 'Noto Sans KR', sans-serif;
 		}
 
 		.banner.style2 .image {

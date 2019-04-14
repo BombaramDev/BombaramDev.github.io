@@ -31,7 +31,9 @@
 					<!-- Use any element to open/show the overlay navigation menu -->					
 					<section class="banner onload-image-fade-in onload-content-fade-right style2 fullscreen orient-center content-align-center image-position-center" id="home">						
 						<div class="content">							
-							<p class="title">Bombaram</p>
+							<!--<p class="title">Bombaram</p>-->
+							<img src="images/bombaram_logo.png" style="width:25%;"/>
+							<p></p>
 							<p class="maintitle">Storytelling LAB</p>
 							<p class="major"></a>Storytelling Lab is established to transform something complicated into something creative and intuitive by getting inspiration from everything in the ever-changing world,
 								We are an integrated production team focusing on creative partnerships.</p>
@@ -40,8 +42,8 @@
 							</ul>
 						</div>
 						<div class="video-background">
-							<div class="video-foreground">
-							<iframe src="https://www.youtube.com/embed/xUjb29tvOcM?rel=0&controls=0&showinfo=0;autoplay=1;loop=1&playlist=xUjb29tvOcM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+							<div class="video-foreground" id="player">
+							<!--<iframe src="https://www.youtube.com/embed/xUjb29tvOcM?rel=0&controls=0&showinfo=0;autoplay=1;loop=1&playlist=xUjb29tvOcM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>-->
 							</div>
 						</div>
 
@@ -148,6 +150,46 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/menu.js"></script>
+			<script>
+				var tag = document.createElement('script');
+
+				tag.src = "https://www.youtube.com/iframe_api";
+				var firstScriptTag = document.getElementsByTagName('script')[0];
+				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+				var player;
+				function onYouTubeIframeAPIReady() {
+					player = new YT.Player('player', {
+					videoId: 'xUjb29tvOcM',
+					playerVars: {
+	                    'controls' : 0,
+						'autoplay': 1,
+						'loop' : 1,
+						'showinfo' : 0,
+						'playlist' : 'xUjb29tvOcM'
+    	            },
+					events: {
+						'onReady': onPlayerReady,
+						'onStateChange': onPlayerStateChange
+					}
+					});
+				}
+
+				function onPlayerReady(event) {
+					event.target.playVideo();
+				}
+
+				var done = false;
+				function onPlayerStateChange(event) {
+					if (event.data == YT.PlayerState.PLAYING) {
+					//setTimeout(stopVideo, 6000);
+					done = true;
+					}
+				}
+				function stopVideo() {
+					player.stopVideo();
+				}
+			</script>
 
 	</body>
 </html>

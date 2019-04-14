@@ -81,6 +81,11 @@ input, select, textarea {
 	font-size : 1.5em;
 	font-weight: 100;
 }
+.maintitle {
+	font-family: 'Noto Serif KR', serif;
+	font-size : 2.5em;
+	font-weight: 100;
+}
 
 
 .youtubeContainer {
@@ -106,7 +111,7 @@ input, select, textarea {
 	left: 0;
 	right: 0;
 	bottom: 0;	
-	z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+	z-index: 3; /* Specify a stack order in case you're using a different order for other elements */
 	cursor: pointer; /* Add a pointer on hover */
   }
 
@@ -167,6 +172,46 @@ input, select, textarea {
 	  right: 35px;
 	}
   }
+
+  * { box-sizing: border-box; }
+  .video-background {
+	background: #000;
+	position: fixed;
+	top: 0; right: 0; bottom: 0; left: 0;
+	position: absolute;
+	z-index: 1;
+  }
+  .video-foreground,
+  .video-background iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+  }
+  #vidtop-content {
+	  top: 0;
+	  color: #fff;
+  }
+  .vid-info { position: absolute; top: 0; right: 0; width: 33%; background: rgba(0,0,0,0.3); color: #fff; padding: 1rem; font-family: Avenir, Helvetica, sans-serif; }
+  .vid-info h1 { font-size: 2rem; font-weight: 700; margin-top: 0; line-height: 1.2; }
+  .vid-info a { display: block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); transition: .6s background; border-bottom: none; margin: 1rem auto; text-align: center; }
+  @media (min-aspect-ratio: 16/9) {
+	.video-foreground { height: 300%; top: -100%; }
+  }
+  @media (max-aspect-ratio: 16/9) {
+	.video-foreground { width: 300%; left: -100%; }
+  }
+  @media all and (max-width: 600px) {
+  .vid-info { width: 50%; padding: .5rem; }
+  .vid-info h1 { margin-bottom: .2rem; }
+  }
+  @media all and (max-width: 500px) {
+  .vid-info .acronym { display: none; }
+  }
+
+
 
 /* Basic */
 
@@ -2285,8 +2330,8 @@ input, select, textarea {
 	button,
 	.button {
 		background-color: transparent;
-		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
-		color: #000000 !important;
+		box-shadow: inset 0 0 0 1px rgba(124, 124, 124, 0.8);
+		color: #797979 !important;
 	}
 
 		input[type="submit"]:hover,
@@ -3751,6 +3796,7 @@ input, select, textarea {
 			color: #ffffff;			
 			font-size: 1rem;
 			font-family: 'Noto Sans KR', sans-serif;
+			z-index: 2;
 		}
 
 		.banner.style2 .image {

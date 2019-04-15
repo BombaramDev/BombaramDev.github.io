@@ -3807,7 +3807,7 @@ input, select, textarea {
 			color: #ffffff;			
 			font-size: 1rem;
 			font-family: 'Noto Sans KR', sans-serif;
-			z-index: 2;
+			z-index: 10;
 		}
 
 		.banner.style2 .image {

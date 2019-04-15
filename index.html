@@ -40,15 +40,24 @@
 							<ul class="actions stacked">
 								<li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
 							</ul>
-						</div>
+						</div>						
 						<div class="video-background">
 							<div class="video-foreground">
-								<div id="Player1"></div>
-								<!--<iframe src="https://www.youtube.com/embed/xUjb29tvOcM?rel=0&controls=0&autohide=1&showinfo=0&autoplay=1&loop=1&playsinline=1&playlist=xUjb29tvOcM" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen>
-								</iframe>-->
+								<div id="Player1"></div>								
 							</div>
 						</div>
+						<!--
+						<div class="video-background">
+							<div class="video-foreground">
+								<iframe src="https://www.youtube.com/embed/xUjb29tvOcM?rel=0&controls=0&autohide=1&showinfo=0&autoplay=1&loop=1&playsinline=1&playlist=xUjb29tvOcM" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen>
+								</iframe>
+							</div>
+						</div>
+						-->
 
+						<div id="rightImage" class="image" style="z-index:9">
+							<img src="images/bg.png"/>
+						</div>
 
 					</section>
 					<section class="wrapper style1 align-center" id="first">
@@ -164,18 +173,19 @@
 
 			function onYouTubeIframeAPIReady() {
 				youTubePlayer1 = new YT.Player('Player1', {							
-					videoId: 'xUjb29tvOcM',
-					suggestedQuality : 'hd1080',
+					videoId: 'xUjb29tvOcM',					
 					playerVars: {
-						//rel=0&controls=0&autohide=1&showinfo=0&autoplay=1&loop=1&playsinline=1&playlist=xUjb29tvOcM
-						rel: 0,
-						controls:0,						
-						showinfo:0,
-						autoplay:1,
-						loop:1,
-						playsinline:1,						
-						playlist:'xUjb29tvOcM'
-					},//추천영상 안보여주게 설정
+						mute: 1,
+						autoplay: 1,
+						loop: 1,
+						controls: 0,
+						showinfo: 0,
+						autohide: 0,
+						enablejsapi: 1,
+						modestbranding: 1,
+						playlist: 'xUjb29tvOcM',
+						vq: 'hd1080'
+					},
 					events: {
 					'onReady': onPlayerReady, //로딩할때 이벤트 실행
 					'onStateChange': onPlayerStateChange //플레이어 상태 변화시 이벤트실행
@@ -191,6 +201,7 @@
 			function onPlayerStateChange(event) {
 				if (event.data == YT.PlayerState.PLAYING) {
 					//플레이어가 재생중일때 작성한 동작이 실행된다.
+					jQuery('#rightImage').fadeOut();
 				}
 			}
 			</script>
